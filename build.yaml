@@ -1,0 +1,2 @@
+board: ["nice_nano_v2"]
+shield: ["sofle_left", "sofle_right", "settings_reset"]
