@@ -1,0 +1,15 @@
+manifest:
+  defaults:
+    remote: zmkfirmware
+
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com
+
+  projects:
+    - name: zmk
+      path: zmk
+      revision: main
+
+  self:
+    path: config
