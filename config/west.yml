@@ -1,13 +1,15 @@
 manifest:
+  defaults:
+    remote: zmkfirmware
+
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com
+      url-base: https://github.com/zmkfirmware
 
   projects:
     - name: zmk
-      remote: zmkfirmware
       revision: main
-      import: app/west.yml   # <-- pulls in Zephyr + extensions
+      import: app/west.yml    # pull ZMK's manifest (adds Zephyr + extensions)
 
   self:
     path: config
