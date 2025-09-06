@@ -1,0 +1,4 @@
+﻿name: caps_oled
+build:
+  cmake: .
+  kconfig: Kconfig
