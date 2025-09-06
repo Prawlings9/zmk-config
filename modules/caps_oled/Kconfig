@@ -6,3 +6,4 @@ config ZMK_WIDGET_CAPS_STATUS
     depends on ZMK_DISPLAY
 
 endmenu
+
