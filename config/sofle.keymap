@@ -70,7 +70,7 @@
 &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                 &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &trans   &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
                         &trans       &trans       &trans       &trans  &trans   &trans  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_COLOR_HSB(40,20,100)  &rgb_ug RGB_EFF
-/*                                                        Warm white preset (H=40,S=20,B=100)       Rainbow (via effect next) */
+/*                                                        Warm white preset (H=40,S=20,B=100)                 Rainbow (via effect next) */
             >;
 
             /* No sensor-bindings here to avoid DT merge issues */
