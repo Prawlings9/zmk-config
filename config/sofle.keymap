@@ -28,7 +28,11 @@
                  &kp LGUI &kp LALT &kp LCTRL &mo 1  &kp RET    &kp SPACE &mo 2  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            /* Encoders on DEFAULT: left=volume, right=scroll page */
+            sensor-bindings = <
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+                &inc_dec_kp PG_UP    PG_DN
+            >;
         };
 
         lower_layer {
@@ -47,7 +51,11 @@
                     &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            /* Encoders on LOWER: left=prev/next track, right=volume */
+            sensor-bindings = <
+                &inc_dec_kp C_PREV  C_NEXT
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+            >;
         };
 
         raise_layer {
@@ -65,7 +73,11 @@
                         &trans       &trans       &trans       &trans  &trans   &trans  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            /* Encoders on RAISE: left=hue +/- , right=brightness +/- */
+            sensor-bindings = <
+                &inc_dec_kp RGB_HUI RGB_HUD
+                &inc_dec_kp RGB_BRI RGB_BRD
+            >;
         };
     };
 };
