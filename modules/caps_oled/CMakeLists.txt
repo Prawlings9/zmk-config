@@ -1,7 +1,12 @@
-cmake_minimum_required(VERSION 3.13.1)
+# Build a Zephyr library from this module
+zephyr_library()
 
-if (CONFIG_ZMK_WIDGET_CAPS_STATUS)
-  zephyr_library()
-  zephyr_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
-  zephyr_library_sources(src/caps_status_widget.c src/status_hook.c)
-endif()
+# Headers for this module live in src/ (where caps_status_widget.h is)
+zephyr_library_include_directories(src)
+
+# Source files to compile
+zephyr_library_sources(
+  src/caps_status_widget.c
+  src/status_hook.c
+)
+

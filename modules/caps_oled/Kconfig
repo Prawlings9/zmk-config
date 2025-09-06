@@ -1,9 +1,10 @@
-menu "Caps OLED (lightweight)"
+menu "Caps OLED Module"
 
-config ZMK_WIDGET_CAPS_STATUS
-    bool "Show CAPS indicator on OLED"
+config CAPS_OLED
+    bool "Enable Caps OLED integration"
     default y
-    depends on ZMK_DISPLAY
+    help
+      Enables the custom Caps OLED status widget and hooks.
 
 endmenu
 
