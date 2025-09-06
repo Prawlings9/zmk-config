@@ -20,7 +20,7 @@
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
-            bindings = </* Encoders on DEFAULT: left=volume, right=page scroll */
+            bindings = < /* Encoders on DEFAULT: left=volume, right=page scroll */
             sensor-bindings = <
                 &inc_dec_kp C_VOL_UP C_VOL_DN
                 &inc_dec_kp PG_UP    PG_DN
@@ -40,7 +40,7 @@
 // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
 // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
 //               |     |      |      |      |        |  |       |      |       |       |      |
-            bindings = </* Encoders on LOWER: left=prev/next track, right=volume */
+            bindings = < /* Encoders on LOWER: left=prev/next track, right=volume */
             sensor-bindings = <
                 &inc_dec_kp C_PREV  C_NEXT
                 &inc_dec_kp C_VOL_UP C_VOL_DN
