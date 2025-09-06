@@ -1,0 +1,65 @@
+name: Build ZMK (Sofle)
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shield: [sofle_left, sofle_right, settings_reset]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Setup Python & West
+        run: |
+          python3 -V
+          pip3 install --upgrade west
+
+      - name: West init (local config)
+        run: |
+          west init -l "${{ github.workspace }}/config"
+
+      - name: West update (fetch ZMK & Zephyr)
+        run: |
+          west update --fetch-opt=--filter=tree:0
+
+      # Zephyr export can be optional on newer toolchains; keep non-fatal
+      - name: West zephyr-export (optional)
+        run: |
+          west zephyr-export || true
+
+      - name: Build (${{ matrix.shield }})
+        run: |
+          mkdir -p "${{ runner.temp }}/build-${{ matrix.shield }}"
+          west build -s zmk/app \
+            -d "${{ runner.temp }}/build-${{ matrix.shield }}" \
+            -b "nice_nano_v2" \
+            -- \
+            -DZMK_CONFIG=${{ github.workspace }}/config \
+            -DSHIELD="${{ matrix.shield }}" \
+            -DZEPHYR_EXTRA_MODULES=${{ github.workspace }}/modules
+
+      - name: Collect firmware (${{ matrix.shield }})
+        run: |
+          out="${{ runner.temp }}/build-${{ matrix.shield }}/zephyr/zmk.uf2"
+          dest="${{ github.workspace }}/firmware_${{ matrix.shield }}.uf2"
+          cp "$out" "$dest"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: |
+            firmware_sofle_left.uf2
+            firmware_sofle_right.uf2
+            firmware_settings_reset.uf2
+

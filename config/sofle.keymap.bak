@@ -1,0 +1,41 @@
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        &kp Q    &kp W    &kp E    &kp R    &kp T                &kp Y    &kp U    &kp I    &kp O    &kp P
+        &kp A    &kp S    &kp D    &kp F    &kp G                &kp H    &kp J    &kp K    &kp L    &kp QUOT
+        &kp Z    &kp X    &kp C    &kp V    &kp B                &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
+                              &lt LOWER ESC  &mt LGUI TAB    &mt LALT BSPC  &mt LCTL SPC   &lt RAISE ENTER
+      >;
+    };
+
+    lower {
+      bindings = <
+        &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PERC             &kp CARET &kp AMPS &kp ASTRK &kp LPAR   &kp RPAR
+        &kp F1   &kp F2   &kp F3   &kp F4   &kp F5               &kp LEFT  &kp DOWN &kp UP    &kp RIGHT  &kp SCLN
+        &kp F6   &kp F7   &kp F8   &kp F9   &kp F10              &kp MINUS &kp EQUAL &kp LBRACKET &kp RBRACKET &kp BSLH
+                              &trans         &trans              &trans          &trans
+      >;
+    };
+
+    raise {
+      bindings = <
+        &kp 1    &kp 2    &kp 3    &kp 4    &kp 5                &kp 6    &kp 7    &kp 8    &kp 9    &kp 0
+        &kp GRAVE&kp UNDER&kp PLUS &kp PIPE &kp TILDE            &kp HOME &kp PGDN &kp PGUP &kp END  &kp COLON
+        &bt BT_CLR &bt BT_NXT &bt BT_PRV &out OUT_USB &out OUT_BLE  &kp MUTE &kp VOLD &kp VOLU &kp LBRACE &kp RBRACE
+                              &trans         &trans              &trans          &trans
+      >;
+    };
+
+    adjust {
+      bindings = <
+        &reset  &bootloader &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &none &none
+        &none   &none       &caps_word  &none        &none           &none        &none        &none        &none &none
+        &none   &none       &none       &none        &none           &none        &none        &none        &none &none
+                              &trans       &trans        &trans         &trans
+      >;
+    };
+  };
+};

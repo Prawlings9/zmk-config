@@ -1,0 +1,18 @@
+include:
+  - board: nice_nano_v2
+    shield: sofle_left
+    artifact-name: sofle_left
+
+  - board: nice_nano_v2
+    shield: sofle_right
+    artifact-name: sofle_right
+
+  # Optional: clears Bluetooth pairings; re-flash normal UF2 after using it
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: settings_reset
+include:
+  - board: nice_nano_v2
+    shield: sofle_left
+  - board: nice_nano_v2
+    shield: sofle_right

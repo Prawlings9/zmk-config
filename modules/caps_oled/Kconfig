@@ -1,0 +1,9 @@
+menu "Caps OLED"
+
+config ZMK_WIDGET_CAPS_STATUS
+    bool "Enable Caps status OLED widget"
+    default y
+    depends on ZMK_DISPLAY
+
+endmenu
+

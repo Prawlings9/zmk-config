@@ -1,0 +1,21 @@
+/ {
+    zmk_underglow: zmk_underglow {
+        compatible = "zmk,underglow";
+        label = "Underglow";
+
+        /* 🔧 Number of WS2812 LEDs on THIS HALF.
+         * If some LEDs don't light, increase this.
+         * Too high is harmless (extra slots just won't light).
+         */
+        chain-length = <30>;
+
+        /* WS2812 (Neopixel) color order */
+        color-order = "GRB";
+
+        /* 🔧 Data pin for the LED chain:
+         * Try P0.06 first; if you get no lights after flashing,
+         * change '6' to '8' (P0.08), rebuild, and reflash.
+         */
+        gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+    };
+};
